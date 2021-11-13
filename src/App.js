@@ -4,7 +4,7 @@ import CompletedCv from "./components/cv/CompletedCv";
 import Form from "./components/form/Form";
 
 function App() {
-  //Personal History
+  //Personal Details
   const [infoInput, setInfoInput] = useState({
     fullName: " ",
     email: " ",
@@ -93,25 +93,34 @@ function App() {
           path="/"
           element={
             <Form
-              handleInfoChange={handleInfoChange}
               infoInput={infoInput}
               setInfoInput={setInfoInput}
+              handleInfoChange={handleInfoChange}
               //
-              handleEduChange={handleEduChange}
               eduInputList={eduInputList}
               setEduInputList={setEduInputList}
+              handleEduChange={handleEduChange}
               handleAddEdu={handleAddEdu}
               handleRemoveEdu={handleRemoveEdu}
               //
-              handleWorkExpChange={handleWorkExpChange}
               workExpInputList={workExpInputList}
               setWorkExpInputList={setWorkExpInputList}
+              handleWorkExpChange={handleWorkExpChange}
               handleAddWorkExp={handleAddWorkExp}
               handleRemoveWorkExp={handleRemoveWorkExp}
             />
           }
         />
-        <Route path="/completed" element={<CompletedCv />} />
+        <Route
+          path="/completed"
+          element={
+            <CompletedCv
+              infoInput={infoInput}
+              eduInputList={eduInputList}
+              workExpInputList={workExpInputList}
+            />
+          }
+        />
       </Routes>
     </>
   );

@@ -9,8 +9,11 @@
 h1,
 h2,
 h3,
+h4,
+h5,
 ul,
-li {
+li,
+p {
   margin: 0;
   padding: 0;
 }
@@ -18,26 +21,6 @@ li {
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.input-container-bottom {
-  padding-bottom: 3rem;
-  border-bottom: 1.5px solid black;
-  margin-bottom: 3rem;
-}
-
-label {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
 }
 
 input,
@@ -52,11 +35,6 @@ textarea {
   padding-top: 4rem;
   padding-bottom: 4rem;
 } */
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 .info-container {
   text-align: center;
