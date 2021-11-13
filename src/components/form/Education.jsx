@@ -4,10 +4,9 @@ import { Label, Input, InputContainer, Button } from "./styles/Form.styled";
 export default function Education({
   handleEduChange,
   eduInputList,
-  handleAddClick,
-  handleRemoveClick,
+  handleAddEdu,
+  handleRemoveEdu,
 }) {
-  console.log(eduInputList);
   return (
     <>
       {eduInputList.map(
@@ -15,7 +14,7 @@ export default function Education({
           { schoolName, course, location, startDate, endDate, degree },
           index
         ) => (
-          <InputContainer>
+          <InputContainer key={index}>
             <h2>EDUCATION</h2>
             <Label>SCHOOL</Label>
             <Input
@@ -58,18 +57,19 @@ export default function Education({
               value={degree}
               onChange={(event) => handleEduChange(event, index)}
             />
+
             {eduInputList.length !== 1 && (
               <Button
                 type="button"
                 style={{ backgroundColor: "red" }}
-                onClick={() => handleRemoveClick(index)}
+                onClick={() => handleRemoveEdu(index)}
               >
                 DELETE
               </Button>
             )}
 
             {eduInputList.length - 1 === index && (
-              <Button type="button" onClick={handleAddClick}>
+              <Button type="button" onClick={handleAddEdu}>
                 ADD EDUCTION
               </Button>
             )}

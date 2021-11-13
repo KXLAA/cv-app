@@ -22,17 +22,17 @@ function App() {
   };
 
   //Education
-  const [eduInputList, setEduInputList] = useState([
-    {
-      schoolName: " ",
-      degree: " ",
-      course: " ",
-      location: " ",
-      startDate: " ",
-      endDate: " ",
-    },
-  ]);
+  const initialEduState = {
+    schoolName: " ",
+    degree: " ",
+    course: " ",
+    location: " ",
+    startDate: " ",
+    endDate: " ",
+  };
+  const [eduInputList, setEduInputList] = useState([initialEduState]);
 
+  // Handle onChange
   const handleEduChange = (event, index) => {
     const { name, value } = event.target;
     const list = [...eduInputList];
@@ -40,27 +40,50 @@ function App() {
     setEduInputList(list);
   };
 
-  // handle click event of the Remove button
-  const handleRemoveClick = (index) => {
+  // Add Education
+  const handleAddEdu = (event) => {
+    setEduInputList([...eduInputList, eduInputList]);
+  };
+
+  // Remove Education
+  const handleRemoveEdu = (index) => {
     const list = [...eduInputList];
     list.splice(index, 1);
     setEduInputList(list);
   };
 
-  // handle click event of the Add button
-  const handleAddClick = (event) => {
-    event.preventDefault();
-    setEduInputList([
-      ...eduInputList,
-      {
-        schoolName: " ",
-        degree: " ",
-        course: " ",
-        location: " ",
-        startDate: " ",
-        endDate: " ",
-      },
-    ]);
+  //Work Experience
+  const initialWorkExpState = {
+    company: " ",
+    title: " ",
+    location: " ",
+    startDate: " ",
+    endDate: " ",
+    details: " ",
+  };
+
+  const [workExpInputList, setWorkExpInputList] = useState([
+    initialWorkExpState,
+  ]);
+
+  // Handle onChange
+  const handleWorkExpChange = (event, index) => {
+    const { name, value } = event.target;
+    const list = [...workExpInputList];
+    list[index][name] = value;
+    setWorkExpInputList(list);
+  };
+
+  // Add Education
+  const handleAddWorkExp = (event) => {
+    setWorkExpInputList([...workExpInputList, workExpInputList]);
+  };
+
+  // Remove Education
+  const handleRemoveWorkExp = (index) => {
+    const list = [...workExpInputList];
+    list.splice(index, 1);
+    setWorkExpInputList(list);
   };
 
   return (
@@ -72,11 +95,19 @@ function App() {
             <Form
               handleInfoChange={handleInfoChange}
               infoInput={infoInput}
+              setInfoInput={setInfoInput}
               //
               handleEduChange={handleEduChange}
               eduInputList={eduInputList}
-              handleAddClick={handleAddClick}
-              handleRemoveClick={handleRemoveClick}
+              setEduInputList={setEduInputList}
+              handleAddEdu={handleAddEdu}
+              handleRemoveEdu={handleRemoveEdu}
+              //
+              handleWorkExpChange={handleWorkExpChange}
+              workExpInputList={workExpInputList}
+              setWorkExpInputList={setWorkExpInputList}
+              handleAddWorkExp={handleAddWorkExp}
+              handleRemoveWorkExp={handleRemoveWorkExp}
             />
           }
         />

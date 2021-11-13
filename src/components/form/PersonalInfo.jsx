@@ -3,7 +3,6 @@ import { Label, Input, InputContainer, TextArea } from "./styles/Form.styled";
 
 export default function PersonalInfo({ handleInfoChange, infoInput }) {
   const { fullName, email, location, number, summary } = infoInput;
-  console.log(infoInput);
   return (
     <InputContainer>
       <h2>PERSONAL INFORMATION</h2>

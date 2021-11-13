@@ -16,14 +16,53 @@ export default function Form({
   infoInput,
   handleEduChange,
   eduInputList,
-  handleAddClick,
-  handleRemoveClick,
+  handleAddEdu,
+  handleRemoveEdu,
+  handleWorkExpChange,
+  workExpInputList,
+  handleAddWorkExp,
+  handleRemoveWorkExp,
+  setWorkExpInputList,
+  setEduInputList,
+  setInfoInput,
 }) {
   let navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate("/completed");
+  };
+
+  const handleReset = (event) => {
+    event.preventDefault();
+    setInfoInput({
+      fullName: " ",
+      email: " ",
+      number: " ",
+      location: " ",
+      summary: " ",
+    });
+    setEduInputList([
+      {
+        schoolName: " ",
+        degree: " ",
+        course: " ",
+        location: " ",
+        startDate: " ",
+        endDate: " ",
+      },
+    ]);
+
+    setWorkExpInputList([
+      {
+        company: " ",
+        title: " ",
+        location: " ",
+        startDate: " ",
+        endDate: " ",
+        details: " ",
+      },
+    ]);
   };
 
   return (
@@ -33,16 +72,23 @@ export default function Form({
       <Education
         handleEduChange={handleEduChange}
         eduInputList={eduInputList}
-        handleAddClick={handleAddClick}
-        handleRemoveClick={handleRemoveClick}
+        handleAddEdu={handleAddEdu}
+        handleRemoveEdu={handleRemoveEdu}
       />
-      <WorkExp />
+      <WorkExp
+        handleWorkExpChange={handleWorkExpChange}
+        workExpInputList={workExpInputList}
+        handleAddWorkExp={handleAddWorkExp}
+        handleRemoveWorkExp={handleRemoveWorkExp}
+      />
 
       <ButtonContainer>
         <Button type="submit" onClick={handleSubmit}>
           SUBMIT
         </Button>
-        <Button style={{ backgroundColor: "red" }}>RESET FROM</Button>
+        <Button style={{ backgroundColor: "red" }} onClick={handleReset}>
+          RESET FROM
+        </Button>
       </ButtonContainer>
     </FormLayout>
   );
