@@ -1,8 +1,15 @@
-# Getting Started with Create React App
+# CV APP
 
 Generate a CV with this handy website made in React. Input state is managed with the `useState` hook and routing is done using **react router**.
 
-The completed cv is styled using **Styled Components**
+The completed CV is styled using **Styled Components**
+
+## Demo
+### Form
+![alt text](public/assets/Demo01.png)
+
+### Output CV
+![alt text](public/assets/Demo02.png)
 
 Ypu can view the site live here: [CV GENERATOR](https://cv-generator-react-01.netlify.app/)
 
