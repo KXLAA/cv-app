@@ -13,7 +13,6 @@ export default function WorkExp({
   handleAddWorkExp,
   handleRemoveWorkExp,
 }) {
-  console.log(workExpInputList);
   return (
     <>
       {workExpInputList.map(
