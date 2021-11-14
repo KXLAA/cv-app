@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const CvLayout = styled.div`
   margin: 2rem auto;
   max-width: 50rem;
+  border: solid 0.15rem black;
+  padding: 3rem;
+  border-radius: 0.5rem;
 `;
 
 //PERSONAL INFO
@@ -100,4 +103,5 @@ export const WorkExpDetails = styled.div`
 
 export const Detail = styled.p`
   padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 `;

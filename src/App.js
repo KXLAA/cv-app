@@ -89,42 +89,53 @@ function App() {
 
   return (
     <>
-      <a
-        href="https://github.com/KXLAA/cv-app"
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-          paddingRight: "2rem",
-          paddingTop: "1rem",
-        }}
-      >
-        <FaGithub style={{ fontSize: "2.5rem" }} />
-      </a>
-
       <Routes>
         <Route
           path="/"
           element={
-            <Form
-              infoInput={infoInput}
-              setInfoInput={setInfoInput}
-              handleInfoChange={handleInfoChange}
-              //
-              eduInputList={eduInputList}
-              setEduInputList={setEduInputList}
-              handleEduChange={handleEduChange}
-              handleAddEdu={handleAddEdu}
-              handleRemoveEdu={handleRemoveEdu}
-              //
-              workExpInputList={workExpInputList}
-              setWorkExpInputList={setWorkExpInputList}
-              handleWorkExpChange={handleWorkExpChange}
-              handleAddWorkExp={handleAddWorkExp}
-              handleRemoveWorkExp={handleRemoveWorkExp}
-            />
+            <>
+              <a
+                href="https://github.com/KXLAA/cv-app"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  paddingRight: "2rem",
+                  paddingTop: "1rem",
+                }}
+              >
+                <FaGithub style={{ fontSize: "2.5rem" }} />
+              </a>
+
+              <Form
+                infoInput={infoInput}
+                setInfoInput={setInfoInput}
+                handleInfoChange={handleInfoChange}
+                //
+                eduInputList={eduInputList}
+                setEduInputList={setEduInputList}
+                handleEduChange={handleEduChange}
+                handleAddEdu={handleAddEdu}
+                handleRemoveEdu={handleRemoveEdu}
+                //
+                workExpInputList={workExpInputList}
+                setWorkExpInputList={setWorkExpInputList}
+                handleWorkExpChange={handleWorkExpChange}
+                handleAddWorkExp={handleAddWorkExp}
+                handleRemoveWorkExp={handleRemoveWorkExp}
+              />
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: "900",
+                  textAlign: "center",
+                }}
+              >
+                Coded by KXLAA 🤙
+              </p>
+            </>
           }
         />
         <Route
@@ -138,9 +149,6 @@ function App() {
           }
         />
       </Routes>
-      <p style={{ fontSize: "1.5rem", fontWeight: "900", textAlign: "center" }}>
-        Coded by KXLAA 🤙
-      </p>
     </>
   );
 }
