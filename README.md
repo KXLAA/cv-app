@@ -4,6 +4,8 @@ Generate a CV with this handy website made in React. Input state is managed with
 
 The completed CV is styled using **Styled Components**
 
+You can view the site live here: [CV GENERATOR](https://cv-generator-react-01.netlify.app/)
+
 ## Demo
 ### Form
 ![alt text](public/assets/Demo01.png)
@@ -11,7 +13,6 @@ The completed CV is styled using **Styled Components**
 ### Output CV
 ![alt text](public/assets/Demo02.png)
 
-Ypu can view the site live here: [CV GENERATOR](https://cv-generator-react-01.netlify.app/)
 
 or you can run it locally:
 
